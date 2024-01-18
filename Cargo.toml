@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "cargo-axum",
+    "minus1",
+    "day1", "day2", 
+]
+
+resolver = "2"
