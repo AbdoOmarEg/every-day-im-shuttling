@@ -141,11 +141,10 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "serde",
- "tokio",
 ]
 
 [[package]]
-name = "day2"
+name = "day4"
 version = "0.1.0"
 dependencies = [
  "axum",
@@ -404,7 +403,6 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "serde",
- "tokio",
 ]
 
 [[package]]
@@ -606,6 +604,16 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
+]
+
+[[package]]
+name = "server"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "day1",
+ "minus1",
+ "tokio",
 ]
 
 [[package]]

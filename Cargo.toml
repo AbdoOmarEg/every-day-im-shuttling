@@ -1,7 +1,7 @@
 [workspace]
 members = [
-    "cargo-axum", "day1",
-    "day2", "minus1", 
+    "cargo-axum", "day1", "day4",
+    "minus1", "server", 
 ]
 
 resolver = "2"
