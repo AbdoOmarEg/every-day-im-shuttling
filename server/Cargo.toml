@@ -2,11 +2,13 @@
 name = "server"
 version = "0.1.0"
 edition = "2021"
+default-run = "server"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 minus1 = { path = "../minus1" }
 day1 = { path = "../day1" }
+day4 = { path = "../day4" }
 axum = "0.7.4"
 tokio = { version = "1.35.1", features = ["full"] }

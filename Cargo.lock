@@ -149,7 +149,7 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "serde",
- "tokio",
+ "serde_json",
 ]
 
 [[package]]
@@ -612,6 +612,7 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "day1",
+ "day4",
  "minus1",
  "tokio",
 ]
