@@ -17,6 +17,7 @@ pub async fn strength(extract::Json(reindeers): extract::Json<Vec<Reindeer>>) ->
         .to_string()
 }
 
+#[allow(non_snake_case)]
 #[derive(Deserialize)]
 pub struct ReindeersContest {
     #[allow(dead_code)]
@@ -30,7 +31,6 @@ pub struct ReindeersContest {
     snow_magic_power: i32,
     #[allow(dead_code)]
     favorite_food: String,
-    // cAnD13s_3ATeN-yesT3rdAy: i32,
     #[serde(rename = "cAnD13s_3ATeN-yesT3rdAy")]
     cAnD13s_3ATeN_yesT3rdAy: i32,
 }
