@@ -1,7 +1,13 @@
 [workspace]
 members = [
-    "cargo-axum", "day1", "day4", "day5",
+    "cargo-axum", "day1", "day4", "day5", "day6",
     "minus1", "server", 
+]
+
+default-members = ["server"]
+
+exclude = [
+    "cargo-axum", 
 ]
 
 resolver = "2"
