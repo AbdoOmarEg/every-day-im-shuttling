@@ -17,3 +17,4 @@ day8 = { path = "../day8" }
 day11 = { path = "../day11" }
 axum = "0.7.4"
 tokio = { version = "1.35.1", features = ["full"] }
+tower-http = { version="0.5", features = ["fs"] }

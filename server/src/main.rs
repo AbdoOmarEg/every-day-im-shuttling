@@ -11,6 +11,7 @@ use day7::{bake, header_decode_recpie_cookie};
 use day8::{drop_gravity, poki_weight};
 use minus1::{fake_error, root};
 use tokio::net::TcpListener;
+use tower_http::services::ServeFile;
 
 #[tokio::main]
 async fn main() {
@@ -27,14 +28,14 @@ async fn main() {
         .route("/8/weight/:idx", get(poki_weight))
         .route("/8/drop/:idx", get(drop_gravity))
         .route("/11/assets/decoration.png", get(image))
-        .route("/11/red_pixels", post(red_pixels));
-    // .nest_service(
-    //     "/11/assetz",
-    //     ServeFile::new(format!(
-    //         "{}/assets/decoration.png",
-    //         std::env::current_dir().unwrap().to_str().unwrap()
-    //     )),
-    // );
+        .route("/11/red_pixels", post(red_pixels))
+        .nest_service(
+            "/11/assetz",
+            ServeFile::new(format!(
+                "{}/assets/decoration.png",
+                std::env::current_dir().unwrap().to_str().unwrap()
+            )),
+        );
     let listener = TcpListener::bind("127.0.0.1:8000").await.unwrap();
     serve(listener, app).await.unwrap()
 }
