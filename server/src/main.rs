@@ -3,6 +3,7 @@ use axum::{
     serve, Router,
 };
 use day1::any_number_of_numbers;
+use day11::{image, red_pixels};
 use day4::{contest, strength};
 use day5::optional_queryiz;
 use day6::find_elfs;
@@ -24,7 +25,16 @@ async fn main() {
         .route("/7/decode", get(header_decode_recpie_cookie))
         .route("/7/bake", get(bake))
         .route("/8/weight/:idx", get(poki_weight))
-        .route("/8/drop/:idx", get(drop_gravity));
+        .route("/8/drop/:idx", get(drop_gravity))
+        .route("/11/assets/decoration.png", get(image))
+        .route("/11/red_pixels", post(red_pixels));
+    // .nest_service(
+    //     "/11/assetz",
+    //     ServeFile::new(format!(
+    //         "{}/assets/decoration.png",
+    //         std::env::current_dir().unwrap().to_str().unwrap()
+    //     )),
+    // );
     let listener = TcpListener::bind("127.0.0.1:8000").await.unwrap();
     serve(listener, app).await.unwrap()
 }

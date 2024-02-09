@@ -14,5 +14,6 @@ day5 = { path = "../day5" }
 day6 = { path = "../day6" }
 day7 = { path = "../day7" }
 day8 = { path = "../day8" }
+day11 = { path = "../day11" }
 axum = "0.7.4"
 tokio = { version = "1.35.1", features = ["full"] }
